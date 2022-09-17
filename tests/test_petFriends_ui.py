@@ -6,8 +6,7 @@ from selenium.webdriver.common.by import By
 
 def test_all_pets_are_present(go_to_my_pets):
 
-    element = WebDriverWait(pytest.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".\\.col-sm-4.left")))
+    pytest.driver.implicitly_wait(10)
     # Сохраняем в statistic информацию о количестве питомцев
     statistic = pytest.driver.find_elements_by_css_selector(".\\.col-sm-4.left")
 
